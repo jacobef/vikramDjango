@@ -1,8 +1,8 @@
 from django.http import HttpResponse
 from django.urls import path, include
-
+from adminApp import views
 urlpatterns = [
-    path('users/', lambda request: HttpResponse("not implemented")),
+    path('users/', views.users),
     path('users/remove/', lambda request: HttpResponse("not implemented")),
     path('users/talk/', lambda reguest: HttpResponse("not implemented"))
 ]
