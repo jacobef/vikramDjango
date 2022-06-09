@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content2 %}
+    Users
+{% endblock %}
+{% block content %}
+<h1>There are {{ users }} users logged in right now:</h1>
+{% for user in A_users %}
+    <div style="background: ghostwhite;
+            font-size: 20px;
+            padding: 10px;
+            border: 1px solid lightgray;
+            margin: 10px;">
+    {{ user.username }}
+    </div>
+    <br>
+{% endfor %}
+{% endblock %}

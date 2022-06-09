@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create account</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
     <form method="post">
         {% csrf_token %}
         Password must be longer than 8 characters
         {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
-</body>
-</html>
+{% endblock %}
