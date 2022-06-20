@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <title>{% block content2 %} {% endblock %}</title>
     <!--some navbar-->
+    <style>
+        a:link, a:visited {
+            background-color: #66ff66;
+            color: black;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        a:hover, a:active {
+            background-color: #33ff33;
+        }
+    </style>
 </head>
 <body>
-<a href="/adminpage/users/">Users</a> | <a href="/">Home</a>
+<a href="/">Home</a><a href="/messages/">Messages</a><a href="/accounts/profile/">Profile</a>
 {% block content %}
 
 {% endblock %}

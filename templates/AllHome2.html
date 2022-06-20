@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>HOME</h1>
+{% if user.is_authenticated %}
+Hello {{ user }}, I know you are reading this.
+{% endif %}
+{% endblock %}

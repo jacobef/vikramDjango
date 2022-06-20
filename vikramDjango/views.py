@@ -4,20 +4,16 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import path
 from django.views.generic import CreateView
-
-
-def hi(request, some_int):
-    print(some_int)
-    return render(request, "img.html")
-def write(request):
-    return render(request, "html.html")
-
 def profile(request):
-    return render(request, "profile.html", {'user': request.user, 'equals': "=" * len(request.user.username) + "======"})
-
+    if request.user.is_superuser:
+        template = "profile_admin.html"
+    else:
+        template = "profile_nonadmin.html"
+    return render(request, template, {'user': request.user, 'equals': "=" * len(request.user.username) + "======"})
+def home(request):
+    return render(request, "AllHome2.html", {'user': request.user})
 class UserCreateView(CreateView):
     model = User
     fields = ["username", "password"]
-    template_name = "new_account.html"
+    template_name = "new_account_nonadmin.html"
     success_url = "profile"
-    pass

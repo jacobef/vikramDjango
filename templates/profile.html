@@ -1,10 +1,6 @@
-{% extends "base.html" %}
-{% block content %}
 <h1>Hello, {{ user }}.</h1>
 <h1>{{ equals }}</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Submit</button>
+    <br>
+<form action="/messages/">
+    <button type="submit">Go to messages</button>
 </form>
-{% endblock %}

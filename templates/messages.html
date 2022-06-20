@@ -1,0 +1,9 @@
+<h1>YOUR MESSAGES:</h1>
+{% for messages in Messages %}
+    {{ UserSent }} : {{ messages.inputField }}
+    <br>
+{% endfor %}
+
+<form action="/messages/send/">
+    <button type="submit">Send a message</button>
+</form>
