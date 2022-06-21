@@ -11,5 +11,6 @@ class ExampleModel(models.Model):
     large_text_example = models.TextField(max_length=1000)
     example_other_model_link = models.ForeignKey(to=ExampleModelTwo, on_delete=models.CASCADE)
 class message(models.Model):
-    inputField = models.TextField(max_length=1000000000)
-    To = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    inputField = models.TextField(max_length=100000000000000000000)
+    To = models.ForeignKey(to=User, related_name="user_to", on_delete=models.CASCADE)
+    From = models.ForeignKey(to=User, related_name="user_from", on_delete=models.CASCADE)

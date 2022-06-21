@@ -30,6 +30,6 @@ urlpatterns = [
     path('accounts/create/', views.UserCreateView.as_view()),
     path('accounts/profile/', views.profile),
     path('messages/view/', adminViews.viewListOfMessages),
-    path('messages/send/', adminViews.ViewMessages.as_view()),
+    path('messages/send/', adminViews.SendMessages.as_view()),
     path('messages/', adminViews.messages)
 ]
